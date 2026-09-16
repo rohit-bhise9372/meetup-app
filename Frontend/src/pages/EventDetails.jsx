@@ -79,24 +79,40 @@ function EventDetails() {
         <div className="col-md-5">
           <div className="card shadow-sm p-3 mb-3">
             <p className="mb-3">
-              🕐 <strong>Time:</strong>
+              <img
+                src="/time-icon.svg"
+                width="16"
+                height="16"
+                alt="Time"
+                className="me-1"
+              />{" "}
+              <strong>Time:</strong>
               <br />
               {data.date} · {data.time}
             </p>
 
             <p className="mb-3">
-              📍 <strong>{data.venue}</strong>
+              <img
+                src="/location-icon.svg"
+                width="16"
+                height="16"
+                alt="Location"
+                className="me-1"
+              />{" "}
+              <strong>{data.venue}</strong>
               <br />
               {data.address}
             </p>
 
             <p className="mb-0">
-              💰{" "}
-              {data.price && data.price > 0 ? (
-                <>₹{data.price}</>
-              ) : (
-                "Free"
-              )}
+              <img
+                src="/price-icon.svg"
+                width="16"
+                height="16"
+                alt="Price"
+                className="me-1"
+              />{" "}
+              {data.price && data.price > 0 ? <>₹{data.price}</> : "Free"}
             </p>
           </div>
 
@@ -111,7 +127,6 @@ function EventDetails() {
               </div>
             </div>
           )}
-
         </div>
       </div>
     </div>

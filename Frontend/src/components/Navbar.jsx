@@ -12,7 +12,7 @@ function Navbar() {
             alt="Meetup Logo"
             style={{
               height: "35px",
-                width: "auto",
+              width: "auto",
                 
             }}
           />

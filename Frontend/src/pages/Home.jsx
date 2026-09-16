@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import useFetch from "../useFetch";
 import SearchBar from "../components/SearchBar";
@@ -20,10 +19,13 @@ function Home() {
 
   let events = data;
 
-  // Search
+  // Search (title + tags)
   if (search !== "") {
-    events = events.filter((event) =>
-      event.title.toLowerCase().includes(search.toLowerCase())
+    const searchLower = search.toLowerCase();
+    events = events.filter(
+      (event) =>
+        event.title.toLowerCase().includes(searchLower) ||
+        event.tags?.some((tag) => tag.toLowerCase().includes(searchLower))
     );
   }
 
@@ -61,4 +63,3 @@ function Home() {
 }
 
 export default Home;
-
